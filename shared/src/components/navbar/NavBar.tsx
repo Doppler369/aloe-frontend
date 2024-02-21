@@ -12,8 +12,6 @@ import { Text } from '../common/Typography';
 import styled from 'styled-components';
 import { Chain, useAccount, useNetwork, useDisconnect } from 'wagmi';
 
-import AloeMobileLogo from '../../assets/svg/AloeCapitalLogo';
-import AloeDesktopLogo from '../../assets/svg/AloeCapitalNavLogo';
 import EllipsisIcon from '../../assets/svg/Ellipsis';
 import AccountInfo from './AccountInfo';
 import ChainSelector from './ChainSelector';
@@ -27,24 +25,6 @@ import { OutlinedGradientRoundedButton } from '../common/Buttons';
 import useSafeState from '../../data/hooks/UseSafeState';
 import { GN, GNFormat } from '../../data/GoodNumber';
 import axios, { AxiosResponse } from 'axios';
-
-const DesktopLogo = styled(AloeDesktopLogo)`
-  width: 100px;
-  height: 40px;
-  margin-right: 32px;
-  @media (max-width: ${RESPONSIVE_BREAKPOINTS.TABLET}px) {
-    display: none;
-  }
-`;
-
-const MobileLogo = styled(AloeMobileLogo)`
-  width: 40px;
-  height: 40px;
-  margin-right: 32px;
-  @media (min-width: ${RESPONSIVE_BREAKPOINTS.TABLET + 1}px) {
-    display: none;
-  }
-`;
 
 const DesktopTopNav = styled.div`
   position: fixed;
@@ -328,10 +308,7 @@ export function NavBar(props: NavBarProps) {
   return (
     <>
       <DesktopTopNav>
-        <a href='/' title='home'>
-          <MobileLogo />
-          <DesktopLogo />
-        </a>
+        <a href='/' title='home'></a>
         <DesktopNavLinks>
           <VerticalDivider />
           {links.map((link, index) => (

@@ -1,7 +1,6 @@
 import JSBI from 'jsbi';
 import { DropdownOption } from 'shared/lib/components/common/Dropdown';
 
-import { ReactComponent as AloeLogo } from '../../assets/svg/aloe_capital_logo.svg';
 import { ReactComponent as UniswapLogo } from '../../assets/svg/uniswap_logo.svg';
 import { AloeAddMarginActionCard } from '../../components/borrow/actions/AloeAddMarginActionCard';
 import { AloeBorrowActionCard } from '../../components/borrow/actions/AloeBorrowActionCard';
@@ -114,7 +113,7 @@ export const REPAY: Action = {
 
 export const WITHDRAW: Action = {
   id: ActionID.TRANSFER_OUT,
-  description: 'Send funds from your Borrow Vault to your wallet.',
+  description: 'Send funds from your Borrow NFT to your wallet.',
   actionCard: AloeWithdrawActionCard,
 };
 
@@ -151,7 +150,7 @@ export const SWAP: Action = {
 export const ActionProviders: { [key: string]: ActionProvider } = {
   AloeII: {
     name: 'Aloe II',
-    Icon: AloeLogo,
+    Icon: 'AloeLogo',
     color: '#3a8d71',
     actions: {
       ADD_MARGIN,
